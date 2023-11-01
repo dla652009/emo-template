@@ -1,2 +1,1 @@
-# emo-template
-起手模板
+# Vue 3 + TypeScript + Vite + Vue Router + Pinia + UnoCss
