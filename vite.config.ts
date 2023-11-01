@@ -14,6 +14,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
       "@c": path.resolve(__dirname, "src/components"),
       "@s": path.resolve(__dirname, "src/styles"),
+      "@v": path.resolve(__dirname, "src/views"),
     },
   },
   css: {

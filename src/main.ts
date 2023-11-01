@@ -1,6 +1,12 @@
-import { createApp } from 'vue'
-import 'virtual:uno.css';
-import App from './App.vue'
-import '@s/index.scss';
+import { createApp } from "vue";
+import "virtual:uno.css"; // 原子化css
+import App from "./App.vue";
+import "@s/index.scss"; // 全局样式
+import router from "./router"; // 路由
+import { createPinia } from "pinia"; // 状态管理器
 
-createApp(App).mount('#app')
+const pinia = createPinia();
+const app = createApp(App);
+app.use(router);
+app.use(pinia);
+app.mount("#app");
