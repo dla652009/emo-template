@@ -1,7 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+// Source: https://github.com/csstools/normalize.css
+@import "@unocss/reset/normalize.css";
+// Source: https://github.com/csstools/sanitize.css
+@import "@unocss/reset/sanitize/sanitize.css";
+@import "@unocss/reset/sanitize/assets.css";
+// Source: https://meyerweb.com/eric/tools/css/reset/index.html
+@import "@unocss/reset/eric-meyer.css";
 html,
 body,
 #app {
