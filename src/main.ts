@@ -1,5 +1,4 @@
 import { createApp } from "vue";
-import "virtual:uno.css"; // 原子化css
 import App from "./App.vue";
 import "@s/index.scss"; // 全局样式
 import router from "./router"; // 路由

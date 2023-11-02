@@ -19,7 +19,6 @@
     "@types/node": "^20.8.10",
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
-    "unocss": "^0.57.1",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.5",

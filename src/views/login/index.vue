@@ -1,8 +1,8 @@
 <template>
-  <div wh-full flex-center class="login-container">
-    <div relative h-120 w-180 b-rd-2 bg-white class="content">
-      <div top--5 absolute flex flex-items-center flex-col h-130 w-90 b-rd-2 p-10px class="form">
-        <span mb-20px color-white font-bold font-size-30px> L O G I N </span>
+  <div class="login-container">
+    <div class="content flex-center">
+      <div class="form">
+        <span class="title"> L O G I N </span>
         <a-form
           :model="formState"
           name="horizontal_login"
@@ -71,14 +71,21 @@ const disabled = computed(() => {
 </script>
 <style lang="scss" scoped>
 .login-container {
+  // wh-full flex-center 
   background: linear-gradient(200deg, #f3e7e9, #e3eeff);
   .content{
-
+    // relative h-120 w-180 b-rd-2 bg-white 
+    position: relative;
+    
   }
   .form {
+    // top--5 absolute flex flex-items-center flex-col h-130 w-90 b-rd-2 p-10px 
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     background-color: #d3b7d8;
     transition: 0.5s ease-in-out;
+    .title {
+      // mb-20px color-white font-bold font-size-30px
+    }
   }
 }
 </style>

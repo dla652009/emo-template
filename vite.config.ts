@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import Vue from "@vitejs/plugin-vue";
-import UnoCSS from "unocss/vite"; // 原子化Css
 import path from "path";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
@@ -9,12 +8,11 @@ import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 export default defineConfig({
   plugins: [
     Vue(),
-    UnoCSS(),
     AutoImport(
       // 按需自动引入API
       {
         imports: ["vue", "vue-router"],
-        dts: "config/auto-imports.d.ts",
+        dts: "types/auto-imports.d.ts",
       }
     ),
     Components(
@@ -25,7 +23,7 @@ export default defineConfig({
             importStyle: false, // css in js
           }),
         ],
-        dts: "config/components.d.ts",
+        dts: "types/components.d.ts",
       }
     ),
   ],
