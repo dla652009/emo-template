@@ -9,7 +9,8 @@ export default defineConfig({
   ],
   shortcuts: [
     {
-      'flex-center': 'flex items-center justify-center'
+      'flex-center': 'flex items-center justify-center',
+      'wh-full': 'w-full h-full'
     }
   ]
 })
