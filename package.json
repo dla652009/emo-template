@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@unocss/reset": "^0.57.1",
     "ant-design-vue": "^4.0.6",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",

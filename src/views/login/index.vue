@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-container flex-center full">
     <div class="content flex-center">
       <div class="form">
         <span class="title"> L O G I N </span>
@@ -12,7 +12,6 @@
           @finishFailed="onFinishFailed"
         >
           <a-form-item
-            label="Username"
             name="username"
             :rules="[
               { required: true, message: 'Please input your username!' },
@@ -25,7 +24,6 @@
             </a-input>
           </a-form-item>
           <a-form-item
-            label="Password"
             name="password"
             :rules="[
               { required: true, message: 'Please input your password!' },
@@ -45,6 +43,8 @@
           </a-form-item>
         </a-form>
       </div>
+      <div class="left"></div>
+      <div class="right"></div>
     </div>
   </div>
 </template>
@@ -71,20 +71,45 @@ const disabled = computed(() => {
 </script>
 <style lang="scss" scoped>
 .login-container {
-  // wh-full flex-center 
   background: linear-gradient(200deg, #f3e7e9, #e3eeff);
-  .content{
-    // relative h-120 w-180 b-rd-2 bg-white 
+  .content {
+    border-radius: 8px;
+    background-color: $white;
     position: relative;
-    
-  }
-  .form {
-    // top--5 absolute flex flex-items-center flex-col h-130 w-90 b-rd-2 p-10px 
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #d3b7d8;
-    transition: 0.5s ease-in-out;
-    .title {
-      // mb-20px color-white font-bold font-size-30px
+    height: 500px;
+    width: 800px;
+    .left {
+    }
+    .right {
+    }
+    .form {
+      position: absolute;
+      padding: 60px 20px 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 8px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #d3b7d8;
+      transition: 0.5s ease-in-out;
+      height: 540px;
+      width: 400px;
+      left: 20px;
+      .title {
+        font-size: 30px;
+        font-weight: bold;
+        color: $white;
+        margin-bottom: 20px;
+      }
+      :deep(.ant-form) {
+        flex-direction: column;
+        .ant-form-item {
+          margin-bottom: 20px;
+          .ant-form-item-label > label {
+            color: $white;
+          }
+        }
+      }
     }
   }
 }
