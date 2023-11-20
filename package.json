@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "serve": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@unocss/reset": "^0.57.1",
     "ant-design-vue": "^4.0.6",
+    "axios": "^1.6.2",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",
     "vue": "^3.3.4",
@@ -19,10 +20,12 @@
   "devDependencies": {
     "@types/node": "^20.8.10",
     "@vitejs/plugin-vue": "^4.2.3",
+    "mockjs": "^1.1.0",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.5",
+    "vite-plugin-mock": "^2.9.6",
     "vue-tsc": "^1.8.5"
   }
 }

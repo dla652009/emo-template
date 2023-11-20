@@ -2,15 +2,20 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 const routes: any = [
   {
+    path: "/", // 重定向
+    redirect: (_: any) => {
+      return { path: "/login" };
+    },
+  },
+  {
     path: "/login",
     name: "login",
     component: () => import("@v/login/index.vue"),
   },
   {
-    path: "/", // 重定向
-    redirect: (_: any) => {
-      return { path: "/login" };
-    },
+    path: "/home",
+    name: "home",
+    component: () => import("@v/home/index.vue"),
   },
   {
     path: "/:currentPath(.*)*", // 路由未匹配到，进入这个
