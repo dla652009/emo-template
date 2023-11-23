@@ -52,6 +52,7 @@
 import { UserOutlined, LockOutlined } from "@ant-design/icons-vue";
 import { Sha1 } from "@/utils/crypto";
 import { login } from "@/api/login";
+const { proxy } : any = getCurrentInstance();
 interface FormState {
   username: string;
   password: string;
@@ -60,9 +61,10 @@ const formState = reactive<FormState>({
   username: "",
   password: "",
 });
-const onFinish = async (datas: any) => {
-  const { username, password } = datas;
-  const res = await login({
+const onFinish = async (data: any) => {
+  console.log(proxy.$loading, "getCurrentInstance");
+  const { username, password } = data;
+  await login({
     username,
     password: Sha1(password),
   });
