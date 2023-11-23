@@ -37,8 +37,13 @@
           </a-form-item>
 
           <a-form-item>
-            <a-button :disabled="disabled" type="primary" html-type="submit"
-              >Log in</a-button
+            <a-button
+              :disabled="disabled"
+              type="primary"
+              html-type="submit"
+              v-loading="1"
+            >
+              Log in</a-button
             >
           </a-form-item>
         </a-form>
@@ -52,7 +57,7 @@
 import { UserOutlined, LockOutlined } from "@ant-design/icons-vue";
 import { Sha1 } from "@/utils/crypto";
 import { login } from "@/api/login";
-const { proxy } : any = getCurrentInstance();
+const { proxy }: any = getCurrentInstance();
 interface FormState {
   username: string;
   password: string;

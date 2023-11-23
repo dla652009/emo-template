@@ -1,15 +1,6 @@
-export const mountPrototype = (global: any) => {
-  // 挂载原型方法
-  global.$loading = loading;
-};
+import { loading } from "./function";
+import { ComponentCustomProperties } from "vue";
 
-const loading = (callBack: Function, time: number = 300) => {
-  // 延迟
-  let timeout;
-  if (!timeout) {
-    timeout = setTimeout(() => {
-      timeout = null;
-      callBack();
-    }, time);
-  }
+export default (global: ComponentCustomProperties & Record<string, any>) => {
+   global.$loading = loading;
 };
