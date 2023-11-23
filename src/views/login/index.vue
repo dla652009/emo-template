@@ -50,6 +50,8 @@
 </template>
 <script lang="ts" setup>
 import { UserOutlined, LockOutlined } from "@ant-design/icons-vue";
+import { Sha1 } from "@/utils/crypto";
+import { login } from "@/api/login";
 interface FormState {
   username: string;
   password: string;
@@ -58,8 +60,12 @@ const formState = reactive<FormState>({
   username: "",
   password: "",
 });
-const onFinish = (values: any) => {
-  console.log("Success:", values);
+const onFinish = async (datas: any) => {
+  const { username, password } = datas;
+  const res = await login({
+    username,
+    password: Sha1(password),
+  });
 };
 
 const onFinishFailed = (errorInfo: any) => {
@@ -70,47 +76,47 @@ const disabled = computed(() => {
 });
 </script>
 <style lang="scss" scoped>
-.login-container {
-  background: linear-gradient(200deg, #f3e7e9, #e3eeff);
-  .content {
-    border-radius: 8px;
-    background-color: $white;
-    position: relative;
-    height: 500px;
-    width: 800px;
-    .left {
-    }
-    .right {
-    }
-    .form {
-      position: absolute;
-      padding: 60px 20px 0 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-radius: 8px;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-      background-color: #d3b7d8;
-      transition: 0.5s ease-in-out;
-      height: 540px;
-      width: 400px;
-      left: 20px;
-      .title {
-        font-size: 30px;
-        font-weight: bold;
-        color: $white;
-        margin-bottom: 20px;
-      }
-      :deep(.ant-form) {
-        flex-direction: column;
-        .ant-form-item {
-          margin-bottom: 20px;
-          .ant-form-item-label > label {
-            color: $white;
-          }
-        }
-      }
-    }
-  }
-}
+// .login-container {
+//   background: linear-gradient(200deg, #f3e7e9, #e3eeff);
+//   .content {
+//     border-radius: 8px;
+//     background-color: $white;
+//     position: relative;
+//     height: 500px;
+//     width: 800px;
+//     .left {
+//     }
+//     .right {
+//     }
+//     .form {
+//       position: absolute;
+//       padding: 60px 20px 0 20px;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       border-radius: 8px;
+//       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+//       background-color: #d3b7d8;
+//       transition: 0.5s ease-in-out;
+//       height: 540px;
+//       width: 400px;
+//       left: 20px;
+//       .title {
+//         font-size: 30px;
+//         font-weight: bold;
+//         color: $white;
+//         margin-bottom: 20px;
+//       }
+//       :deep(.ant-form) {
+//         flex-direction: column;
+//         .ant-form-item {
+//           margin-bottom: 20px;
+//           .ant-form-item-label > label {
+//             color: $white;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 </style>

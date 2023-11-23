@@ -1,10 +1,11 @@
 // import VueRouter from 'vue-router'
 import { createRouter, createWebHashHistory } from "vue-router";
+import {redirectRouter} from '@/settings/index';
 const routes: any = [
   {
     path: "/", // 重定向
     redirect: (_: any) => {
-      return { path: "/login" };
+      return { path: `/${redirectRouter}` };
     },
   },
   {
