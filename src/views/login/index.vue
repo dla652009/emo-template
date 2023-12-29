@@ -17,7 +17,7 @@
               { required: true, message: 'Please input your username!' },
             ]"
           >
-            <a-input v-model:value="formState.username">
+            <a-input v-model:value="formState.username" v-focus>
               <template #prefix>
                 <UserOutlined class="site-form-item-icon" />
               </template>
@@ -37,11 +37,11 @@
           </a-form-item>
 
           <a-form-item>
+            <!-- :disabled="disabled" -->
             <a-button
-              :disabled="disabled"
               type="primary"
               html-type="submit"
-              v-loading="1"
+              v-loading
             >
               Log in</a-button
             >
@@ -67,7 +67,6 @@ const formState = reactive<FormState>({
   password: "",
 });
 const onFinish = async (data: any) => {
-  console.log(proxy.$loading, "getCurrentInstance");
   const { username, password } = data;
   await login({
     username,
@@ -76,7 +75,6 @@ const onFinish = async (data: any) => {
 };
 
 const onFinishFailed = (errorInfo: any) => {
-  console.log("Failed:", errorInfo);
 };
 const disabled = computed(() => {
   return !(formState.username && formState.password);

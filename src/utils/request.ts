@@ -27,7 +27,6 @@ service.interceptors.response.use(
   function (response) {
     // 2xx 范围内的状态码都会触发该函数。
     // 对响应数据做点什么
-    console.log(response, "响应拦截！");
     const { data } = response;
     if (data.message) message.success(response.data.message);
     return response;
