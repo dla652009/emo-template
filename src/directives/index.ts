@@ -9,8 +9,8 @@ export default (app: App<Element>) => {
   });
   app.directive("loading", {
     mounted: (el, binding, vnode) => {
-      // 获取按钮元素
-      el.disabled = true;
+      // 更改改组件的loading
+      console.log(vnode);
     },
   });
 };

@@ -42,6 +42,7 @@
               type="primary"
               html-type="submit"
               v-loading
+              :loading="true"
             >
               Log in</a-button
             >
