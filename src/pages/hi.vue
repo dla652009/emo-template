@@ -6,11 +6,23 @@
 const searchMap = reactive([
   {
     prop: "name",
-    label: "姓名",
+    label: "测试1",
   },
   {
     prop: "age",
-    label: "年龄",
+    label: "测试测试2",
+  },
+  {
+    prop: "aaa",
+    label: "测试3",
+  },
+  {
+    prop: "aaa",
+    label: "测试3",
+  },
+  {
+    prop: "aaa",
+    label: "测试3",
   },
 ]);
 </script>
