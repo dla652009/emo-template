@@ -9,14 +9,9 @@ const routes: any = [
     },
   },
   {
-    path: "/login",
-    name: "login",
-    component: () => import("@v/login/index.vue"),
-  },
-  {
-    path: "/home",
-    name: "home",
-    component: () => import("@v/home/index.vue"),
+    path: "/hi",
+    name: "hi",
+    component: () => import("@/pages/hi.vue"),
   },
   {
     path: "/:currentPath(.*)*", // 路由未匹配到，进入这个

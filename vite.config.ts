@@ -1,31 +1,31 @@
-import { defineConfig, UserConfigExport, ConfigEnv } from "vite";
-import Vue from "@vitejs/plugin-vue";
 import path from "path";
-import Components from "unplugin-vue-components/vite";
+import Vue from "@vitejs/plugin-vue";
+import VueDevTools from "vite-plugin-vue-devtools";
 import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { defineConfig, UserConfigExport, ConfigEnv } from "vite";
 import { viteMockServe } from "vite-plugin-mock";
-import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
     plugins: [
       Vue(),
+      // https://github.com/webfansplz/vite-plugin-vue-devtools
+      VueDevTools(),
       AutoImport(
         // 按需自动引入API
         {
-          imports: ["vue", "vue-router"],
+          resolvers: [ElementPlusResolver()],
+          imports: ["vue", "vue-router", "vue-i18n", "@vueuse/core"],
           dts: "types/auto-imports.d.ts",
         }
       ),
       Components(
         // 按需自动引入组件
         {
-          resolvers: [
-            AntDesignVueResolver({
-              importStyle: false, // css in js
-            }),
-          ],
+          resolvers: [ElementPlusResolver()],
           dts: "types/components.d.ts",
         }
       ),
@@ -37,17 +37,14 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
-        "@c": path.resolve(__dirname, "src/components"),
-        "@s": path.resolve(__dirname, "src/styles"),
-        "@v": path.resolve(__dirname, "src/views"),
       },
     },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@import "@s/variables.scss";',
+          additionalData: '@import "@/styles/variables.scss";',
         },
       },
     },
-  }
-}
+  };
+};

@@ -22,12 +22,9 @@
 
     /* 别名 */
     "paths": {
-      "@/*": ["./src/*"],
-      "@c/*": ["./src/components/*"],
-      "@s/*": ["./src/styles/*"],
-      "@v/*": ["./src/views/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/*.d.ts"],
+  "exclude": ["dist", "node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
