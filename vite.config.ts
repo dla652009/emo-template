@@ -1,10 +1,12 @@
 import path from "path";
 import Vue from "@vitejs/plugin-vue";
+import UnoCSS from "unocss/vite";
 import VueDevTools from "vite-plugin-vue-devtools";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-import { defineConfig, UserConfigExport, ConfigEnv } from "vite";
+// defineConfig,
+import { UserConfigExport, ConfigEnv } from "vite";
 import { viteMockServe } from "vite-plugin-mock";
 
 // https://vitejs.dev/config/
@@ -12,6 +14,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
   return {
     plugins: [
       Vue(),
+      UnoCSS(),
       // https://github.com/webfansplz/vite-plugin-vue-devtools
       VueDevTools(),
       AutoImport(

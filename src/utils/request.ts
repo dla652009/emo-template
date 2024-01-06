@@ -1,6 +1,5 @@
 // axios 封装
 import axios from "axios";
-import { message } from "ant-design-vue";
 
 // axios对象
 const service = axios.create({
@@ -27,8 +26,7 @@ service.interceptors.response.use(
   function (response) {
     // 2xx 范围内的状态码都会触发该函数。
     // 对响应数据做点什么
-    const { data } = response;
-    if (data.message) message.success(response.data.message);
+    // const { data } = response;
     return response;
   },
   function (error) {

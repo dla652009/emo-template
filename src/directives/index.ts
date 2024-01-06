@@ -7,10 +7,4 @@ export default (app: App<Element>) => {
       input.focus();
     },
   });
-  app.directive("loading", {
-    mounted: (el, binding, vnode) => {
-      // 更改改组件的loading
-      console.log(vnode);
-    },
-  });
 };

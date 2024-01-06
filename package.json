@@ -22,11 +22,13 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^2.0.0",
     "@types/crypto-js": "^4.2.1",
     "@types/node": "^20.8.10",
     "@vitejs/plugin-vue": "^4.2.3",
     "mockjs": "^1.1.0",
     "typescript": "^5.0.2",
+    "unocss": "^0.58.3",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.5",

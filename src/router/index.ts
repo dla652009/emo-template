@@ -1,6 +1,6 @@
 // import VueRouter from 'vue-router'
 import { createRouter, createWebHashHistory } from "vue-router";
-import {redirectRouter} from '@/settings/index';
+import { redirectRouter } from "@/settings/index";
 const routes: any = [
   {
     path: "/", // 重定向
@@ -12,6 +12,11 @@ const routes: any = [
     path: "/hi",
     name: "hi",
     component: () => import("@/pages/hi.vue"),
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: () => import("@/layouts/404.vue"),
   },
   {
     path: "/:currentPath(.*)*", // 路由未匹配到，进入这个
