@@ -34,7 +34,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       ),
       viteMockServe({
         mockPath: "mock", // mock 地址
-        localEnabled: command === "serve",
+        // enable: command === "dev",
       }),
     ],
     resolve: {

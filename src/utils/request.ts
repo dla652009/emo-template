@@ -1,11 +1,11 @@
 // axios 封装
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
 // axios对象
-const service = axios.create({
+const service: AxiosInstance = axios.create({
   // axios请求基础URL
   // 由于本项目使用mock + vite-plugin-mock启动的mock服务，默认使用的端口号与页面一致
-  baseURL: "http://localhost:5173",
+  baseURL: "http://127.0.0.1:2333/",
   timeout: 5000,
 });
 
@@ -26,12 +26,14 @@ service.interceptors.response.use(
   function (response) {
     // 2xx 范围内的状态码都会触发该函数。
     // 对响应数据做点什么
-    // const { data } = response;
+    const { data } = response;
+    ElMessage.success(data);
     return response;
   },
   function (error) {
     // 超出 2xx 范围的状态码都会触发该函数。
     // 对响应错误做点什么
+    ElMessage.error(error);
     return Promise.reject(error);
   }
 );

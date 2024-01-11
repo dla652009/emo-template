@@ -4,7 +4,7 @@ import { redirectRouter } from "@/settings/index";
 const routes: any = [
   {
     path: "/", // 重定向
-    redirect: (_: any) => {
+    redirect: () => {
       return { path: `/${redirectRouter}` };
     },
   },
@@ -20,7 +20,7 @@ const routes: any = [
   },
   {
     path: "/:currentPath(.*)*", // 路由未匹配到，进入这个
-    redirect: (_: any) => {
+    redirect: () => {
       return { path: "/404" };
     },
   },
